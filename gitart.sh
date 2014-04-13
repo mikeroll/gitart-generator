@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# DISCLAIMER: This is a pretty useless shit.
-
 # This should be run as root as we mess with system time
 if [[ $UID != 0 ]]; then
     echo "Please run this script with sudo:"
@@ -68,7 +66,7 @@ done
 
 # Restore date
 date -s @"$(cat ../saved_date)" > /dev/null
-rm saved_date
+rm ../saved_date
 
 # Push that shit!
 git push -u origin master > /dev/null
